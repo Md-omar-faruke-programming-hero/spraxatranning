@@ -1,0 +1,35 @@
+.registerbox{
+    width: 320px;
+    height: auto;
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+.welcometothewebsite{
+    padding: 20px;
+    background-color: blueviolet;
+}
+.welcometothewebsite p,small{
+    color: white;
+}
+.createAccount{
+    text-align: center;
+}
+.inputfield{
+    /* margin: auto; */
+    text-align: center;
+}
+.inputfield input{
+    width: 70%;
+    margin-bottom: 20px;
+    
+}
+.inputfield input[type="email"],input[type=password]{
+    
+    height: 20px;
+    padding: 5px;
+}
+
