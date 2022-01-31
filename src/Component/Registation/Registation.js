@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
-import useAuth from '../../Hook/useAuth';
-// import useFireBase from '../../Hook/useFireBase';
+
 import "./Registation.css"
 
 const Registation = () => {
-    const { createUser, error, setError } = useAuth();
-
+   
+    const[error,setError]=useState('')
     const history = useHistory();
 
     const [email, setEmail] = useState('');
@@ -32,12 +31,32 @@ const Registation = () => {
 
         else {
 
+          const registerUserInfo={email,pass1}
+          fetch('http://localhost:5000/createUser',{
+              method:"POST",
+              headers:{
+                  "content-type":"application/json"
+              },
+              body:JSON.stringify(registerUserInfo)
+          }).then(res=>res.json())
+          .then(data=>{
+              if(data.insertedId){
+                swal({
+                    // 
+                    text: "Your account create successfully!",
+                    icon: "success",
+                    button: "ok!",
+                  });
+                  
           
-            createUser(email, pass1, history);
-            setError('');
-            setEmail('');
-            setPassword1('');
-            setPassword2('');
+                  
+                  history.push("/login")
+              }
+          })
+            
+            
+            
+           
         }
             
     }

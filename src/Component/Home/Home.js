@@ -7,7 +7,7 @@ import AddMemberModal from '../Modal/AddMemberModal';
 import { Link } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import swal from 'sweetalert';
-import Header from '../Header/Header';
+
 
 const Home = () => {
     const [members, setmember] = useState([]);
@@ -80,7 +80,7 @@ const Home = () => {
 
     return (
         <>
-            <Header></Header>
+            
             <div>
                 <h1 className='homepage'>welcome to the website</h1>
 
